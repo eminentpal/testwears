@@ -1,0 +1,16 @@
+NOTE:
+errohanler and catchasyncerros differ
+
+uder middlewares
+errors of the errorhandler : catches erros whhich happens when we delete create find or update products
+catchasyncerros: while this catches errors that has to do with async, that is when we try to wait for async respond and it failed or errors that handles the async code block. 
+
+
+//7d means 7days
+
+changed from 7 to 1
+
+
+//Reason for protected route
+if you log out user in the frontend and den try to access your profile link, d site will crash with errors, thats why protected route in frontend is done also aside 
+the backend own, so that the user cannot access d url if is not logged in.
