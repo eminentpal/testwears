@@ -318,9 +318,9 @@ console.log(totalProducts)
           {/* <div class="col-2">
             <img src="images/exclusive.png" class="offer-img" />
           </div> */}
-          <div class="col-2bb">
+          <div   class="col-2bb">
              
-              <h1>Need Assistance?</h1>
+              <h1 >Need Assistance?</h1>
               <small  class="rowMain">
                   Get in touch with us for any complaints or recommendations you have. We will be glad to hear from you.
                   

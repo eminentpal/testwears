@@ -1619,6 +1619,7 @@ width: 100%;
 }
 
 .col-2bb {
+  line-height: 30px;
   text-align: center;
   width: 100%;
   max-width:600px;
@@ -1640,6 +1641,7 @@ width: 100%;
   font-size: 50px;
   line-height: 60px;
   margin: 25px 0;
+  color: 'red'
 }
 
 
@@ -1660,6 +1662,7 @@ width: 100%;
   width: 100%;
   max-width:350px;
   height: 150px;
+  line-height: 30px;
 
 }
 
