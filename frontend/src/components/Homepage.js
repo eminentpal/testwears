@@ -251,7 +251,7 @@ console.log(totalProducts)
           <div class=" col-2b1">
     
               <h1>Highly Trusted Online Store</h1>
-              <small  class="rowMain">
+              <small >
                   We are highly trusted and relaible. Have safe and fast delivery of any item you buy with 30 days return guaranteed. 
      
                   
@@ -321,7 +321,7 @@ console.log(totalProducts)
           <div   class="col-2bb">
              
               <h1 >Need Assistance?</h1>
-              <small  class="rowMain">
+              <small  >
                   Get in touch with us for any complaints or recommendations you have. We will be glad to hear from you.
                   
               </small>
