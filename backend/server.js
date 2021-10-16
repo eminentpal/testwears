@@ -7,7 +7,6 @@ const connectDatabase = require ("./config/database")
 const cloudinary = require ('cloudinary')
 
 
-
 // Handle uncaught rejection exceptions  error, eg somethn not defined
 
 process.on('uncaughtException', err => {
