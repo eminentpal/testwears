@@ -120,7 +120,7 @@ order.totalPrice = orderInfo.totalPrice
 		   <div className="col-10 col-lg-5">
             <main className="shadow-lg">
             <br/>
-            <img src='/images/card.jpeg'  style={{ margin: 'auto 23px'}}   alt='pay with card' />
+            {/* <img src='/images/card.jpeg'  style={{ margin: 'auto 23px'}}   alt='pay with card' /> */}
                 { order && !order?.totalPrice? history.push('/') : (
                   
                   <Fragment>

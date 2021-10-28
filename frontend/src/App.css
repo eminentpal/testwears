@@ -878,12 +878,13 @@ ul.CTAs a {
 
 
 .container {
-  max-width: 100%;
+  width: 1080px;
   margin: auto;
   padding-left: 25px;
   padding-right: 25px;
  
 }
+
 
 .rowMain{
   display: flex;
@@ -962,6 +963,7 @@ ul.CTAs a {
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
+    
 
 }
 
@@ -1467,6 +1469,10 @@ ul {
 
 @media only screen and (max-width: 768px) {
 
+
+  .container {
+    width: 100%;
+  }
   .cart-item{
     width: 100%;
     max-width:600px;

@@ -1,8 +1,8 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 
 import { Link, Route, useLocation } from 'react-router-dom';
 // import Search from './Search';
-    
+    import './style.css';
 import { useDispatch, useSelector} from 'react-redux';
     
 import { logout } from "../../actions/userActions";
@@ -12,8 +12,11 @@ const HeaderB = () => {
 
 const location = useLocation ()
     
-  
-    
+        
+     const [toggleInput, setToggleInput] = useState(false)
+
+      const [toggleUser, setToggleUser] = useState(false)
+
       const { cartItems } = useSelector(state => state.cart)
     
       const alert = useAlert()
@@ -26,76 +29,93 @@ const location = useLocation ()
       alert.success("Logged out successfully.")
     }
 
+    
+
+   useEffect(() => {
+   
+    if(location){
+        setToggleUser(false)
+        setToggleInput(false)
+    }
+
+   }, [location])
+  
+    const handleToggleUser = () => {
+      setToggleUser(prev => {
+     return (  !prev)
+      })
+    }
+  
+    const handleToggle = () => {
+      setToggleInput(prev => {
+     return (  !prev)
+      })
+    }
     return (
-<>
+<Fragment>
      
             { location.pathname !== '/admin/'  && (
+               
                 <div>
-                <nav className="navb " >
-            
-            <div className="toolBar" >
-        
-                    <Link to='/'> <img className="logo"  className="img2"  src="/images/logo4.png" width="250px" height='30px'  alt='logo' /> </Link>
-      
-                    
-                        <input className="inputSearch"  type='text' placeholder="Enter Product Name " />
-                        <i className="fa searchIcon  fa-search"></i>
-                    
-                    <Fragment style={{marginLeft: '40px'}} className="ml-4 dropdown d-inline" >
-                       
-                      
-                        <main  className="dropdown-menu " aria-labelledby="dropDownMenuButton" >
-                        { user ? (
-                            <Fragment>
-                            <Link className='dropdown-item' to="/me">{user?.name}</Link>
-                            {user?.role === 'admin' &&  (<Link className='dropdown-item' to="/dashboard">Dashboard</Link>) } 
-                          
-                             <Link className='dropdown-item' to="/orders/me">Orders</Link>
-                           
-                            <Link  onClick={logoutHandler} className="dropdown-item text-danger" to="/"  >
-                                Logout
-                            </Link>  
-                             </Fragment>
-                           
-                   
-                        ) :
-                           
-                             
-                              <Fragment> <Link className='dropdown-item' to="/login">Login</Link>
-                            <Link className='dropdown-item' to="/register">Register </Link>  </Fragment> }
-                            
-
-                        </main>
-
-                
-                        
-                        
-                        {user ? <img  type="button" id="dropDownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"    src={user?.avatar?.url} className="rounded-circle  avata" alt="avatar"  /> : <i  f009 className="fa fa-user usericon userDiv  btn text-white mr-4" type="button" id="dropDownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></i>  }
- 
-                    
-            
-                    </Fragment>
-
-                 
-                 
-                     
-                         <span>  <Link  to='/cartB'> <i className="fa usericon fa-shopping-cart"   ></i></Link></span>
-                            <span  className="cartLength" >{cartItems.length}</span>
-                            
-                   
+            <div className="navb">
+            <div className='navContainer' >
+                <div className="headerImage">
+                    <Link to="/"><img src="/images/logo4.png" alt="" width="250px" height="50px"/></Link>
                 </div>
 
-                 
+                <nav className="rowNav">
+
+                     <div  className="inputDiv">
+                      <input style={{display: toggleInput ? 'block' : 'none'}}  type="text"  />
+                       <i  onClick={handleToggle} className="fa fa-search"></i>
+                     </div>
+
+                    <div className="dropdown" >
+                       { user ?    <div className="spanUser" > <img   onClick={handleToggleUser} className="userImage  " src={user?.avatar?.url} alt="Profile" /></div>
+                       
+
+                       :
+                       <i  onClick={handleToggleUser} className="userIcon fa fa-user"></i> 
+                    
+                       }
+                     <div  style={{display: toggleUser ? 'block' : 'none'}}  className="dropdown-content">
+                   {    user ? <Fragment>
+                                <Link to="/me"> <li>{user?.name}</li></Link>
+                            {   user?.role === 'admin' && ( <Link to="/dashboard"> <li>Dashboard</li></Link>)}
+                                <Link to="/orders/me"> <li>Orders</li></Link>
+                                <Link  onClick={logoutHandler}  to="/"> <li style={{color:'red'}} >Logout</li></Link>
+
+                             </Fragment>
+
+                         :
+
+                            <Fragment>
+                                <Link to="/login"> <li>Login</li></Link>
+                                <Link to="/register" > <li>Register</li></Link>
+                                
+                            </Fragment>
+                   }
+
+                     </div>
+                     </div>
+                    <div  className="cartContainer"  >
+                     <Link to="/cartB" ><i class="fa fa-shopping-cart"></i></Link>
+                     
+                      <span class="numberCircle">{cartItems?.length}</span>
+                    </div>
+                    
+                </nav>
                 
-            </nav>
+                </div>
+            </div>
 
 
+  
         </div>
-
             )}
 
             
-        </>   
+        </Fragment>   
     )
 }
 

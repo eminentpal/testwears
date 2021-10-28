@@ -1,0 +1,309 @@
+
+.navb {
+    width:100%;
+    height: 80px;
+    background: #175C6B;
+    display: flex;
+    align-items: center;
+   
+  }
+  
+  .navContainer {
+    display: flex;
+    align-items: center;
+    width: 1080px;
+    margin: auto;
+    justify-content: space-between;
+    
+   
+  }
+  
+  .rowNav{
+    display: flex;
+   align-items: center;
+  
+   justify-content: space-evenly;
+    width: 300px;
+    height: 50px;
+    
+  }
+  
+  .inputDiv {
+  position: relative;
+   
+  }
+  
+  .inputDiv input {
+    max-width: 150px;
+    
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    right: 0px;
+  
+  }
+  
+  .inputDiv input::placeholder {
+   font-size: 12px;
+  
+  }
+  
+  .inputDiv i {
+    color: white;
+    margin-left: 4px;
+    font-size: 25px;
+    cursor: pointer;
+   
+    
+  }
+  
+  
+  .userIcon {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    
+  }
+  
+  .cartContainer{
+    text-align: center;
+  
+  }
+  .cartContainer i  {
+    font-size:30px;
+    color: white;
+  
+  }
+  
+  .numberCircle {
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid red;
+    font-size: 10px;
+    color: white;
+    background: red;
+    position: relative;
+    bottom: 15px;
+    right: 10px;
+    
+  
+  }
+  
+  .numberCircle:before,
+  .numberCircle:after {
+    content: '\200B';
+    display: inline-block;
+    line-height: 0px;
+    padding-top: 50%;
+    padding-bottom: 50%;
+  }
+  
+  .numberCircle:before {
+    padding-left: 4px;
+  }
+  
+  .numberCircle:after {
+    padding-right: 4px;
+  }
+  
+  .userImage {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #175C6B;
+    color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    border-radius: 2px;
+   
+  }
+  
+  .dropdown-content  li {
+   margin: auto;
+    list-style-type: none;
+  }
+  
+  
+  .dropdown-content   li {
+    margin-bottom: 2px;
+    font-weight: bold;
+    color: #f9f9f9;
+    
+   }
+  
+   .dropdown-content   li:hover {
+       background:#ccc;
+       color: #175C6B;
+       cursor: pointer;
+   }
+  .dropdown-content a {
+      text-decoration: none;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  
+  /**Mobile view ****/
+  @media only screen and (max-width: 450px) {
+    .userIcon {
+        font-size: 30px;
+    }
+  
+    .rowNav {
+        justify-content: space-between;
+        width: 150px;
+    height: 40px;
+    }
+  
+    .navContainer img{
+        width: 150px;
+        height: 40px;
+        margin-left: 10px
+    }
+    .inputDiv {
+        
+        position: relative;
+       
+    }
+  
+    .inputDiv input {
+        width: 100px;
+        height: 30px;
+        padding: 0px 10px;
+       position: absolute;
+       top: 30px;
+       right: 0px;
+       z-index: 1;
+        height: 26px;
+    }
+  
+    .inputDiv input::placeholder {
+        font-size: 8px;
+        
+      
+     }
+  
+     .numberCircle {
+       
+        bottom: 13px;
+        right: 10px;
+        
+    
+      }
+  
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #175C6B;
+        min-width: 140px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+        border-radius: 2px;
+        left: -70px
+      }
+  
+      .userImage {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        
+      
+       
+    }
+  
+    .spanUser{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        margin: 0 3px ;
+    }
+  
+   }
+  
+   @media only screen and (max-width: 360px) {
+   
+    .inputDiv {
+       
+        
+       
+    }
+    .navContainer img{
+        width: 110px;
+        height: 40px;
+       
+    }
+  
+    .rowNav {
+        justify-content:space-between;
+        width: 150px;
+    height: 40px;
+    }
+  
+    .inputDiv input::placeholder {
+        font-size: 7.4px;
+      
+        
+      
+     }
+  
+     .inputDiv input {
+        width: 100px;
+        height: 30px;
+        padding: 0 5px 0 0;
+        border: 1px solid #ccc;
+        
+     
+    }
+  
+    .userImage {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+     
+       
+      
+       
+    }
+  
+    .spanUser{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+    }
+  
+    .cartContainer i  {
+        font-size:30px;
+        color: white;
+    
+    }
+  
+  
+  
+  
+    
+    }
+  
