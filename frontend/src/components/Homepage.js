@@ -354,8 +354,8 @@ console.log(totalProducts)
         {/* Box for actual popup */}
 
         <div className="row wrapper"> 
-		<div  style={{backgroundColor: "white"}}  className="col-10 col-lg-5">
-        <i  style={{position: 'absolute'}}  onClick={handleToggleUser}  className="mb-3 fa fa-times"></i>
+		<div  style={{backgroundColor: "white"}}  >
+        <i  style={{position: 'relative',  top:'-13px', left:'-5px'}}  onClick={handleToggleUser}  className="mb-3 fa fa-times"></i>
         <form className="shadow-lg" onSubmit={submitHandler}  >
             <h1   className="mb-3">Contact Us</h1>
             <div className="form-group">

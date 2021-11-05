@@ -23,7 +23,7 @@ const profilePicture = req.body.avatar
 
     const result = await cloudinary.v2.uploader.upload(req.body.avatar,{
         folder: 'avatars',
-        width: 150,
+        width: 300,
         crop: "scale"
     })
 
@@ -251,7 +251,7 @@ exports.updateProfile = catchAsyncErrors( async (req, res, next) => {
      //this is for the avartar image
     const result = await cloudinary.v2.uploader.upload(req.body.avatar,{
         folder: 'avatars',
-        width: 150,
+        width: 300,
         crop: "scale"
     })
 
