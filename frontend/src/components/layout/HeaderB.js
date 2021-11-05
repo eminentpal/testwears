@@ -80,7 +80,7 @@ const location = useLocation ()
                        }
                      <div  style={{display: toggleUser ? 'block' : 'none'}}  className="dropdown-content">
                    {    user ? <Fragment>
-                                <Link to="/me"> <li>{user?.name}</li></Link>
+                                <Link to="/me"> <li>Account</li></Link>
                             {   user?.role === 'admin' && ( <Link to="/dashboard"> <li>Dashboard</li></Link>)}
                                 <Link to="/orders/me"> <li>Orders</li></Link>
                                 <Link  onClick={logoutHandler}  to="/"> <li style={{color:'red'}} >Logout</li></Link>

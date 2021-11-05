@@ -4,21 +4,39 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAward, faBox } from '@fortawesome/free-solid-svg-icons';
 import { getAdminProducts} from "../actions/productActions"
 import {useDispatch, useSelector} from 'react-redux';
-import {useAlert} from 'react-alert'
+import {useAlert} from 'react-alert';
+import MetaData from "../components/layout/MetaData"
+
 const Homepage = () => {
 
     const dispatch = useDispatch()
     const alert = useAlert()
     const {loading, products, error} = useSelector(state =>  state.products)
+     
+
+    const [toggleUser, setToggleUser] = useState(false)
 
 
     useEffect(() => {
-        if(error){
-            alert.error(error)
-        }
+        // if(error){
+        //     alert.error(error)
+        // }
         dispatch(getAdminProducts())
     }, [dispatch])
     
+
+ 
+
+  const handleToggleUser = () => {
+    setToggleUser(prev => {
+   return (  !prev)
+    })
+  }
+
+  const submitHandler = (e) => {
+      e.preventDefault()
+  }
+  
 
 const totalProducts = products?.slice(0, 4)
 
@@ -36,6 +54,7 @@ console.log(totalProducts)
    return ( <Fragment>
 
       {/* <!---offer--> */}
+      <MetaData title={"EminentWears - Complete Ecommerce Store"} />
   <div class="headerBig ">
       
           <div class=" col-header">
@@ -325,10 +344,69 @@ console.log(totalProducts)
                   Get in touch with us for any complaints or recommendations you have. We will be glad to hear from you.
                   
               </small>
-             <span> <Link to="#" class="btnn" style={{backgroundColor: '#175C6B', color: 'white', fontWeight: 'bold'}}>Get in touch </Link></span>
+             <span> <Link onClick={handleToggleUser}  to="#" class="btnn" style={{backgroundColor: '#175C6B', color: 'white', fontWeight: 'bold'}}>Get in touch </Link></span>
           </div>
-      
+         
+          
   </div>
+
+  <div id="popup-container"  style={{display: toggleUser ? "block" :'none'}} >
+        {/* Box for actual popup */}
+
+        <div className="row wrapper"> 
+		<div  style={{backgroundColor: "white"}}  className="col-10 col-lg-5">
+        <i  style={{position: 'absolute'}}  onClick={handleToggleUser}  className="mb-3 fa fa-times"></i>
+        <form className="shadow-lg" onSubmit={submitHandler}  >
+            <h1   className="mb-3">Contact Us</h1>
+            <div className="form-group">
+              <label htmlFor="text_field">Title</label>
+              <input
+                type="text"
+                id="text_field"
+                className="form-control"
+                
+              />
+            </div>
+  
+            <div className="form-group">
+              <label htmlFor="email_field">Email</label>
+              <input
+                type="email"
+                id="email_field"
+                className="form-control"
+                
+              />
+
+              
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="message_field">Message</label>
+              <textarea
+                type="textarea"
+                
+                className="form-control"
+                
+              />
+
+              
+            </div>
+
+  
+            <button
+              id="login_button"
+              type="submit"
+              className="btn btn-block py-3"
+              onClick={handleToggleUser} 
+            >
+              Submit
+            </button>
+
+            
+          </form>
+		  </div>
+    </div>
+      </div>
   
   {/* <!-----brands-------> */}
   <div class="brands">
