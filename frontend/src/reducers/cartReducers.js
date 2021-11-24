@@ -1,4 +1,4 @@
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 import { ADD_TO_CART, REMOVE_ITEM_CART, SAVE_SHIPPING_INFO, CLEAR_CART_ITEMS } from '../constants/cartConstants'
 
 
